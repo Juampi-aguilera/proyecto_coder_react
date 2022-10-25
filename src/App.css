@@ -1,38 +1,43 @@
-.App {
-  text-align: center;
+/*  mi paleta
+.color1 {color: #12090e;}
+.color2 {color: #2b2c4b;}
+.color3 {color: #65659b;}
+.color4 {color: #b09eea;}
+.color5 {color: #f8d3ed;} */
+
+/* navbar */
+
+header{
+    height: 56px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar, .offcanvas{
+    background-color: #15284c;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-brand, .nav-link, .navbar-brand:hover, .nav-link:hover, .offcanvas-title, .navbar-toggler, #logo_carrito{
+    color: #c9d4ff;
+    cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-brand{
+    margin-bottom: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-nav{
+    align-items: center;
+    gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#logo_carrito{
+    margin: 0px 78px;
+    text-align: center;
+}
+
+.dropdown-menu{
+    background-color: #65659b;
+}
+
+.offcanvas-body{
+    align-items: center;
 }
