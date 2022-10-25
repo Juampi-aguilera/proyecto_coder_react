@@ -41,3 +41,10 @@ header{
 .offcanvas-body{
     align-items: center;
 }
+
+/* MAIN */
+
+.titulo_main{
+    text-align: center;
+    margin: 20px;
+}
