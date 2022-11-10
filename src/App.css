@@ -26,7 +26,9 @@ header{
 
 .navbar-nav{
     align-items: center;
-    gap: 10px;
+    gap: 40px;
+    font-size: 18px;
+    padding: 8px 0px;
 }
 
 #logo_carrito{
@@ -34,8 +36,12 @@ header{
     text-align: center;
 }
 
-.dropdown-menu{
-    background-color: #65659b;
+.link{
+    color: white;
+    text-decoration: none;
+}
+.link:hover{
+    color: white;
 }
 
 .offcanvas-body{
@@ -46,5 +52,37 @@ header{
 
 .titulo_main{
     text-align: center;
-    margin: 20px;
+    font-size: 40px;
+    margin: 30px;
+}
+
+/* productos */
+.container_products{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto auto;
+}
+
+.product_card {
+    text-align: center;
+    margin: 20px 0px;
+    cursor: pointer;
+}
+
+.product_card img{
+    height: 300px;
+    border: 8px solid black;
+}
+
+.info_product{
+    display: none;
+    background-color: white;
+    width: 50px;
+}
+
+.product_card:hover > .info_product{
+    display: block;
+    position:relative;
+    top: 0%;
+    left: 0%;
 }
