@@ -5,7 +5,7 @@ import { products } from "../utils/products";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer=()=>{
-    const [product,setProduct]=useState();
+    const [product,setProduct]=useState({});
     const { id } = useParams();
 
     useEffect(()=>{
