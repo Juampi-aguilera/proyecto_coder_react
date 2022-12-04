@@ -1,7 +1,13 @@
 import CartWidget from "./CartWidget";
 import {Link} from 'react-router-dom';
+import { useContext } from "react";
+import { CartContext } from "../CartContext";
 
 const Navbar = () =>{
+    const {cartList} =useContext(CartContext)
+    let arrayCant = cartList.map(item => item.cantidad);
+    let cantProductos = arrayCant.reduce((acc, valor)=> acc+ valor, 0)
+
     return(
       <nav className="navbar navbar-expand-md fixed-top">
           <div className="container-fluid">
@@ -26,7 +32,7 @@ const Navbar = () =>{
                       <Link className="link" to="/category/musica">Música</Link>
                     </li>                                
                   </ul>
-                  <CartWidget cant={7}/>
+                  <Link to="/cart"><CartWidget cant={cantProductos}/></Link>
                 </div>
               </div>
           </div>            

@@ -1,28 +1,42 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Product from "./Product";
-import { products } from "../../utils/products"
-import { customFetch } from "../../utils/customFetch";
 import { useParams } from 'react-router-dom'
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../utils/firebaseConfig";
 
 const ItemListContainer = () =>{
     //Hook
     const [productos,setProductos]=useState([]);
     const { category } = useParams();
-    
+
+    let qry;
+    if(category){
+        qry = query(collection(db, "products"), where('category','==',category));
+    }else{
+        qry = collection(db, "products")
+    }
+
+    const getData = async () =>{
+        const querySnapshot = await getDocs(qry);
+        const dataFromFirestore = querySnapshot.docs.map(item =>({
+            id: item.id,
+            ...item.data()
+        }));
+        setProductos(dataFromFirestore)
+    }
+
     //componentDidUpdate
     useEffect(()=>{
-        //llamado a la supuesta API
-        if(category===undefined){
-            customFetch(1500,products)
-                .then(response=>setProductos(response))
-                .catch(console.log("error"))
-        }else{
-            customFetch(1500,products.filter(product=> product.category == category))
-                .then(response=>setProductos(response))
-                .catch(console.log("error"))
-        }
+        getData();
     },[category])
+
+    //componentWillUnmount
+    useEffect(() => {
+        return (() => {
+            setProductos([]);
+        })
+    }, []);
 
     return(
         <>
