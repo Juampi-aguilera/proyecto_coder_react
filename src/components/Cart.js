@@ -56,8 +56,8 @@ const Cart = () =>{
             
             {cartList.length>0 && <>
                 {cartList.map(item=><CartProduct product={item} key={item.id}/>)}
-                <h3 className="ms-5">Total: ${total}</h3>
-                <button className="ms-5 btn btn-primary" onClick={createOrder}>Finalizar compra</button>
+                <h3 className="ms-5 mb-3">Total: ${total}</h3>
+                <button className="ms-5 mb-5 btn btn-primary" onClick={createOrder}>Finalizar compra</button>
             </>}
         </>       
     )

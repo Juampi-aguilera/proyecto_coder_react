@@ -41,8 +41,6 @@ const CartContextProvider = (props) =>{
         return total;
     }
 
-    
-
     return(
         <CartContext.Provider value={{cartList, addItem, clearCart, removeItem, totalCarrito}}>
             {props.children}
@@ -51,17 +49,3 @@ const CartContextProvider = (props) =>{
 }
 
 export default CartContextProvider;
-
-// const addItem = (item,cant) =>{  //falta cantidad
-//     const repetido=cartList.indexOf(item); 
-//     //si no esta repetido se agrega al carrito       
-//     if(repetido===-1){
-//         item.cantidad=cant;
-//         setCartList([
-//         ...cartList
-//         ,item
-//     ])}else{ 
-//         //si se agrega un producto nuevamente se agregue a la cantidad
-//         item.cantidad+=cant
-//     }
-// }
