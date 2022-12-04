@@ -23,7 +23,7 @@ const Navbar = () =>{
                 <div className="offcanvas-body">
                   <ul className="navbar-nav justify-content-center flex-grow-1">
                     <li className="nav-item">
-                      <Link className="link" to="/category/cine y series">Cine y series</Link>
+                      <Link className="link" to="/category/cine-y-series">Cine y series</Link>
                     </li>
                     <li className="nav-item">
                       <Link className="link" to="/category/deportes">Deportes</Link>

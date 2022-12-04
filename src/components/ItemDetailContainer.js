@@ -23,7 +23,9 @@ const ItemDetailContainer=()=>{
     },[])
     
     return(
-        <ItemDetail item={product}/>
+        product.image
+        ?<ItemDetail item={product}/>
+        :<h4 className="m-4">Producto no encontrado</h4>
     )
 }
 

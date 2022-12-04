@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import Product from "./Product";
 import { useParams } from 'react-router-dom'
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../utils/firebaseConfig";
+import ItemList from "./ItemList";
 
 const ItemListContainer = () =>{
     //Hook
@@ -41,15 +41,7 @@ const ItemListContainer = () =>{
     return(
         <>
             <div className="container_products">
-                {productos.map((producto)=>(
-                    <Product
-                    key={producto.id}
-                    id={producto.id}
-                    image={producto.image}
-                    name={producto.name}
-                    price={producto.price}
-                    size={producto.size} />
-                ))}
+                <ItemList items={productos}/>
             </div>
         </>
     )
